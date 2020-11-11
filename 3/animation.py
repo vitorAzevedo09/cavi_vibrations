@@ -1,6 +1,6 @@
 # drawCircleArcExample.py     P. Conrad for CS5nm, 10/31/2008
 #  How to draw an arc in Pygame that is part of a circle
-from function_of_motion_correct import motionOne
+from function_of_motion_correct import motionOne, motionSecond
 import pygame
 from pygame.locals import *
 from sys import exit
@@ -90,7 +90,7 @@ while True:
 
     screen.fill(white);
     
-    u = motionOne(m,k,time_lapsed)
+    u = motionSecond(m,k,time_lapsed)
     print(u)
 
     #wall
@@ -103,7 +103,7 @@ while True:
     pygame.draw.rect(screen, box, (200+u[0]/10,225,50,50), 0)
 
     #line-spring
-    pygame.draw.lines(screen, spring, False, [(250+u[0]/10, 250),(350,250)], 5)
+    pygame.draw.lines(screen, spring, False, [(250+u[0]/10, 250),(350+u[1]/10,250)], 5)
 
     #box
     pygame.draw.rect(screen, box, (350+u[1]/10,225,50,50), 0)
