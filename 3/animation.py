@@ -90,26 +90,27 @@ while True:
 
     screen.fill(white);
     
-    u = motionSecond(m,k,time_lapsed)
-    print(u)
+    u = motionOne(m,k,time_lapsed)
+
+    #u = motionSecond(m,k,time_lapsed)
 
     #wall
     pygame.draw.rect(screen, gray, (100,200,10,100), 0)
 
     #line-spring
-    pygame.draw.lines(screen, spring, False, [(110, 250),(200+u[0]/10,250)], 5)
+    pygame.draw.lines(screen, spring, False, [(110, 250),(200+u[0],250)], 5)
     
     #box
-    pygame.draw.rect(screen, box, (200+u[0]/10,225,50,50), 0)
+    pygame.draw.rect(screen, box, (200+u[0],225,50,50), 0)
 
     #line-spring
-    pygame.draw.lines(screen, spring, False, [(250+u[0]/10, 250),(350+u[1]/10,250)], 5)
+    pygame.draw.lines(screen, spring, False, [(250+u[0], 250),(350+u[1],250)], 5)
 
     #box
-    pygame.draw.rect(screen, box, (350+u[1]/10,225,50,50), 0)
+    pygame.draw.rect(screen, box, (350+u[1],225,50,50), 0)
 
     #line-spring
-    pygame.draw.lines(screen, spring, False, [(400+u[1]/10, 250),(500,250)], 5)
+    pygame.draw.lines(screen, spring, False, [(400+u[1], 250),(500,250)], 5)
 
     #wall
     pygame.draw.rect(screen, gray, (500,200,10,100), 0)
